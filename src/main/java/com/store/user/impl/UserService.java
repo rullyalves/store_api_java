@@ -6,13 +6,21 @@ import com.store.user.IUserService;
 import com.store.exceptions.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements IUserService {
+public class UserService implements IUserService, UserDetailsService {
 
     @Autowired
     IUserDao userDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
 
     @Override
     public Collection<User> findAll() {
@@ -42,4 +50,5 @@ public class UserService implements IUserService {
     public void delete(Long id) {
         userDao.delete(id);
     }
+
 }
