@@ -19,7 +19,7 @@ public class UserService implements IUserService, UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        return userDao.findByUsername(username);
     }
 
     @Override

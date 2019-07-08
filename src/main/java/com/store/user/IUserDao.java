@@ -7,6 +7,8 @@ import com.store.user.impl.UserDto;
 
 public interface IUserDao {
 
+    User findByUsername(String username);
+
     Collection<User> findAll();
 
     User findById(Long id);
