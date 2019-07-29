@@ -36,7 +36,6 @@ public class MemberController {
 
         UriComponents urlCreated = uri.path("v1/api/members/{id}").buildAndExpand(id);
         return ResponseEntity.created(urlCreated.toUri()).build();
-
     }
 
     @PatchMapping("api/members/{id}")
