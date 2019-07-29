@@ -1,6 +1,5 @@
 package com.store.address.impl;
 
-import java.util.Collection;
 import javax.validation.Valid;
 import com.store.address.IAddressService;
 
@@ -17,13 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Collection;
+
 
 @RestController
 @RequestMapping("v1")
 public class AddressController {
 
     @Autowired
-    IAddressService addressService;
+    private IAddressService addressService;
 
     // 200 OK
     @GetMapping("api/addresses")

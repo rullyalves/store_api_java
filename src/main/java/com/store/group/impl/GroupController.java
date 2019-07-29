@@ -23,7 +23,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class GroupController {
 
     @Autowired
-    IGroupService GroupService;
+    private IGroupService GroupService;
 
     // 200 OK
     @GetMapping("api/groups")
